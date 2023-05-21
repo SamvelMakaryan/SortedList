@@ -11,6 +11,7 @@ public:
     List(std::initializer_list<T>);
     List(const List&);
     List(List&&) noexcept;
+	~List();
 public:
     void print() const;
     void print_sorted() const;

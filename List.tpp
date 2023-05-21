@@ -41,6 +41,16 @@ List<T>::List(List&& oth) noexcept
 }
 
 template <typename T>
+List<T>::~List() {
+	Node* tmp = m_head;
+	while (m_head) {
+		m_head = m_head->next;
+		delete tmp;
+		tmp = nullptr;
+	}
+}
+
+template <typename T>
 void List<T>::print() const {
 Node* tmp = m_head;
     while (tmp) {
